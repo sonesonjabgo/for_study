@@ -1,4 +1,7 @@
 infos = [{'name': 'kim', 'age': 12}, {'name': 'lee', 'age': 4}]
 
+totalage = 0
 for info in infos:
-    info['age']
+    totalage += info['age']
+
+print(totalage)
