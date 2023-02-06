@@ -8,6 +8,9 @@
 # arr = [[0 for _ in range(10)] for _ in range(10)]
 # print(arr)
 
-my_list = [0,0,0,0,0,0,0]
-# my_list[:4] = 1
-print(my_list)
+# my_list = [0,0,0,0,0,0,0]
+# # my_list[:4] = 1
+# print(my_list)
+
+# print(list(range(0,11,2)))
+print(list(range(10,0,-1)))
