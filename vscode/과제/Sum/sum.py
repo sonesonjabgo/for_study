@@ -6,7 +6,7 @@ for _ in range(10):
     my_list = []
     maxrow = 0
     maxinx = 0
-    maxdia = 0
+
     for _ in range(100):
         num_list = list(map(int, input().split()))
         my_list.append(num_list)
