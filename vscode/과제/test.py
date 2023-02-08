@@ -14,5 +14,9 @@
 
 # print(list(range(0,11,2)))
 # print(list(range(10,0,-1)))
-for di in [[0,1] [1,0], [0,-1], [-1,0]]:
-    print(di)
+# for di in [[0,1] [1,0], [0,-1], [-1,0]]:
+#     print(di)
+# case = list(input().split())
+# tc, N = case[0], case[1]
+# print(tc, N)
+print('i'+'i')
