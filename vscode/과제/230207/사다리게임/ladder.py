@@ -1,29 +1,29 @@
-# 100번째 행에 원소의 값이 2인 것이 도착 x 지점
-# x부터 위로 올라간다고 생각하면 편하다
-# x의 좌표 r, c 의 4방향 확인해서 그 중 1이 있는지 확인
-# 방향 중 2개면 위로 방향 중 3개면 좌나 우값이 1인 곳으로 이동
+# # 100번째 행에 원소의 값이 2인 것이 도착 x 지점
+# # x부터 위로 올라간다고 생각하면 편하다
+# # x의 좌표 r, c 의 4방향 확인해서 그 중 1이 있는지 확인
+# # 방향 중 2개면 위로 방향 중 3개면 좌나 우값이 1인 곳으로 이동
 
-T = int(input())
-for t in range(1, T+1):
-    ladder = []
-    for _ in range(100):
-        ladder1 = list(map(int, input().split()))
-        ladder.append(ladder1)
+# T = int(input())
+# for t in range(1, T+1):
+#     ladder = []
+#     for _ in range(100):
+#         ladder1 = list(map(int, input().split()))
+#         ladder.append(ladder1)
 
-    # 상 우 좌 시계방향
-    dr = [-1, 0, 0]
-    dc = [0, -1, 1]
+#     # 상 우 좌 시계방향
+#     dr = [-1, 0, 0]
+#     dc = [0, -1, 1]
 
-    for i in range(100):
-        if ladder[99][i] == 2:
-            dir = 0
-            r, c = 99, i
-            # 현재 방향 위쪽으로
-            # 정답의 좌표 -1, i
-            while r > 0:
-                # 현재 방향이 위쪽 방향을 향할 때 좌우를 봐야함
-                if dir == 0:
-                    if
+#     for i in range(100):
+#         if ladder[99][i] == 2:
+#             dir = 0
+#             r, c = 99, i
+#             # 현재 방향 위쪽으로
+#             # 정답의 좌표 -1, i
+#             while r > 0:
+#                 # 현재 방향이 위쪽 방향을 향할 때 좌우를 봐야함
+#                 if dir == 0:
+#                     if
 
 ###################################
 
