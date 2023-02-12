@@ -6,6 +6,7 @@ N = 3
 for i in range(1<<N):
     # i : 0~2**N-1, i의 비트 모양이 부분집합의 모양이다.
     # i의 모든 비트를 확인하자
+    print(i)
     for j in range(N):
         # i&(1 << 0)
         # i&(1 << 1)

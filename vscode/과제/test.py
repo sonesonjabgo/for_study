@@ -22,9 +22,11 @@
 # my_list = '123 123'
 # asc = ' '
 # strda = 'adf'
-# fib = my_list + asc + strda
-# print(set(fib.split()))
-# arr = [input().split() + [0] for _ in range(3)]
-a = [['a','b','c'], ['a','b','c']]
+# # fib = my_list + asc + strda
+# # print(set(fib.split()))
+# # arr = [input().split() + [0] for _ in range(3)]
+# a = [['a','b','c'], ['a','b','c']]
 
-print(''.join(''.join(a)))
+# print(''.join(''.join(a)))
+for i in range(5, 0, -1):
+    print(i)
