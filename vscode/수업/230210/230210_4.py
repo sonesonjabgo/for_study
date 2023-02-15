@@ -1,4 +1,4 @@
-
+# ladder2
 mn = 100*100
 si = 0
 for sj in range(1, 101):

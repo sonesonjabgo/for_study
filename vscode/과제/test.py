@@ -29,8 +29,9 @@
 #
 # # print(''.join(''.join(a)))
 # for i in range(5, 0, -1):
-#     print(i)
-mylst = [1,2,3,4,5]
-mylst.pop(0)
-mylst.pop(0)
-print(mylst)
+# #     print(i)
+# mylst = [1,2,3,4,5]
+# mylst.pop(0)
+# mylst.pop(0)
+# print(mylst)
+int('덕배')
