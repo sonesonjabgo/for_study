@@ -14,3 +14,4 @@ def perm(idx):
             used[i] = 1
             perm(idx+1)
             used[i] = 0
+perm(0)
