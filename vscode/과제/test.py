@@ -34,4 +34,7 @@
 # mylst.pop(0)
 # mylst.pop(0)
 # print(mylst)
-int('덕배')
+# int('덕배')
+# my_lst = [0]
+lst1 = [1]
+print(lst1 + [2])
