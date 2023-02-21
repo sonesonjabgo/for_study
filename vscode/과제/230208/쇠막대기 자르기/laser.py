@@ -8,14 +8,12 @@ for i in range(T):
     for k in a:
         if k == '(':
             stack.append(k)
-            for j in range(len(a)):
-                if a[j] == '(':
-                    if a[j+1] == ')':
-                        laser += 1
-                    else:
-                        break
+            for j in a:
+                if j == '(':
+                    stack.append(j)
                 else:
-                    break
+                    laser += 1
+                    stack.pop()
         elif k == ')':
             if stack:
                 stack.pop()
