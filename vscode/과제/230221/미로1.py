@@ -33,4 +33,3 @@ for _ in range(1, 11):
 
     result = bfs(start)
     print(f'#{tc} {result[ei][ej]}')
-
