@@ -41,6 +41,27 @@ class MyLinkedList:
         result += ']'
         return result
     
+    def pop(self, idx=-1):
+        if idx == 0:
+            # head를 현재 head의 next로 바꿔주기
+            self.head = self.head.next
+        elif idx == -1: # 마지막 요소 삭제
+            # 마지막 요소의 이전요소의 next=None으로 바꿔주기
+            if self.size == 1:
+                self.head = None
+            else:
+                current = self.head
+                for i in range(self.size-2):
+                    current = current.next
+        else:
+            # 삭제 하려는 요소의 이전 요소의 next를
+            # 삭제하려는 요소의 next로 바꿔주면 됩니다.
+            current = self.head
+            prev = None
+            for i in range(idx):
+                prev = current
+                current = current.next
+
 
 lst = MyLinkedList()
 lst.append('A')

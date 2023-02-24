@@ -49,4 +49,5 @@
 # print(lst1 + [2])
 # >>>>>>> 56703781b1f17c0d791973dfc83e31864da374e1
 mys = [1,2]
-print(min(mys))
+letter = 7
+print(letter, *mys)
