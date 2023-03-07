@@ -1,7 +1,26 @@
-# 암호가 5자라면라면룬ㅇ룬ㅇ먀
+import sys
 
-# 0 1 2 3 4 5 6 7 8 9 10
+T = 1001
+arr = [[0] * T for _ in range(T)]
+N = int(sys.stdin.readline())
+data = [list(map(int, sys.stdin.readline().split())) for _ in range(N)]
 
-# range(10, ).
+color = 1
+for paper in data:
+    a, b, c, d = paper
+    s = a + c
+    e = b + d
+    for i in range(a, s):
+        for j in range(b, e):
+            arr[i][j] = color
+    color += 1
 
-print(min(1, 2, 3, 4))
+check = 1
+while check <= N:
+    cnt = 0
+    for i in range(T):
+        for j in range(T):
+            if arr[i][j] == check:
+                cnt += 1
+    print(cnt)
+    check += 1

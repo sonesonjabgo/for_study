@@ -31,5 +31,5 @@ def comb(idx, cnt):
     # # 요소를 선택하면 +1
     # comb(idx + 1, cnt)
 
-K = 3   # N개 중에 K개 선택해라
+K = 3   # N개  중에 K개 선택해라
 comb(0,0)
