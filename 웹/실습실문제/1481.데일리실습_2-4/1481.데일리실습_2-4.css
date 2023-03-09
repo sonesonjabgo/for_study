@@ -1,0 +1,33 @@
+.container {
+  border: 2px solid black;
+  width: 800px;
+  height: 800px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.wc {
+  background-color: white;
+}
+.bc {
+  background-color: black;
+}
+.boxsize {
+  width: 100px;
+  height: 100px;
+}
+.pawn {
+  background-image: url(black_pawn.png);
+  background-size: contain;
+}
+.king {
+  background-image: url(white_king.png);
+  background-size: contain;
+}
+.queen {
+  background-image: url(white_queen.png);
+  background-size: contain;
+}
+.rook {
+  background-image: url(white_rook.png);
+  background-size: contain;
+}

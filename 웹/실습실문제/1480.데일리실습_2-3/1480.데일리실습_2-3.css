@@ -1,0 +1,17 @@
+.container {
+  border: 2px solid black;
+  width: 800px;
+  height: 800px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.item-bk {
+  width: 100px;
+  height: 100px;
+  background-color: black;
+}
+.item-wt {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+}
