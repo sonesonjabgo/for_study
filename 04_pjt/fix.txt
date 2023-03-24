@@ -1,0 +1,14 @@
+model
+- audience 바꿔야 함
+- 입력 안했을 때 공백으로 두게 하는 것
+
+base.html
+- static 사용 해결해야 함 >  html 상단에 load static을 안넣음
+
+detail.html
+- 이미지 안나오는 문제 > 오타였음
+- form 수정
+
+forms.py
+- 명세서에 맞게 수정해야 함
+- 위젯 다루는 법 다시 듣기
