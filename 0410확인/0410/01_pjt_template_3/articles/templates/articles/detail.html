@@ -23,8 +23,19 @@
     <hr>
     <a href="{% url 'articles:index' %}">목록보기</a>
     <hr>
+    {% if comments %}
+      <p><b>{{ comments|length }}개의 댓글이 있습니다.</b></p>
+    {% endif %}
     {% for comment in comments %}
-      <li>{{ comment.content }}</li>
+      <li>
+        {{ comment.content }}
+        <form action="{% url 'articles:comments_delete' article.pk comment.pk %}" method="POST">
+          {% csrf_token %}
+          <input type="submit" value="삭제">
+        </form>
+      </li>
+    {% empty %}
+      <p>댓글이 없습니다.</p>
     {% endfor %}
     <hr>
     <form action="{% url 'articles:comments_create' article.pk %}" method="POST">
