@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Login</h1>
+  {% comment %} 
+  action에 아무것도 없으면 현재 요청을 재요청함
+  지금 views.login 수정 중 (로그인 하면 보려던 디테일 페이지 보도록)
+  
+  {% endcomment %}
+  <form action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="로그인">
+  </form>
+{% endblock content %}
