@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ person }}님의 PROFILE</h1>
+<hr>
+<p>팔로잉 : {{person.followings.count}}</p>
+{% for following in person.followingsww.all %}
+<p>팔로워 : </p>
+<p>{{ person }}님의 게시물</p>
+{% for article in person.article_set.all %}
+  <li>
+    {{ article.title }}
+  </li>
+{% endfor %}
+<p>내 댓글</p>
+
+{% endblock content %}
