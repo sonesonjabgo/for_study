@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>DETAIL</h1>
+  <hr>
+  <div>
+    <h5>{{ movie.title }}</h5>
+    <p>{{ movie.description }}</p>
+    <hr>
+    <h3>댓글 목록</h3>
+    {% if comments %}
+      {% for comment in comments %}
+        <li>
+          {{comment.content}}
+          <form action="{% url 'movies:comments_delete' movie.pk comment.pk %}" method="POST">
+            {% csrf_token %}
+            <input type="submit" value="삭제">
+          </form>
+        </li>
+      {% endfor %}
+    {% else %}
+      <h5>코멘트가 없습니다.</h5>
+    {% endif %}
+    <hr>
+    <form action="{% url 'movies:comments_create' movie.pk %}" method="POST"> <!--url 위치 지정 comment_create로 -->
+      {% csrf_token %}
+      {{ comment_form }} 
+      <input type="submit">
+    </form>
+  </div>
+  <a href="{% url 'movies:index' %}">BACK</a>
+  <hr>
+{% endblock  %}
