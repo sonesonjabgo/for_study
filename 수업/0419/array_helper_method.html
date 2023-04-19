@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const arr = [6,4,3,34,9,5,12,8]
+        // map() : 배열의 모든 요소에 대해서 함수 실행해서 그 결과를 모아서 새로운 배열을 생성한다.
+        // let new_arr = []
+        // for (el of arr) {
+        //     new_arr.push(el-50)
+        // }
+        // console.log(new_arr)
+        // function f(x){
+        //     return x-50
+        // }
+        // let new_arr = arr.map(f)
+        
+        // let new_arr = arr.map(function (x) {return x-50})
+        let new_arr = arr.map(x=>x-50)
+        console.log(new_arr)
+
+        // filter : 인자로 받은 함수가 true를 반환하면 해당하는 요소를 포함하는 새로운 배열을 반환
+        function isEven(x) {
+            return x%2 == 0
+        }
+        new_arr = arr.filter(isEven)
+        console.log(new_arr)
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

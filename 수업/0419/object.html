@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //javascript object >> JSON
+        //JSON >> javascript object
+
+        const obj = {
+            name : '홍길동',
+            age : 17,
+            gender : 'male'
+        }
+        objStr = JSON.stringify(obj)
+        console.log(objStr)
+        jsonStr = '{"name":"김사피","age":25,"gender":"male"}'
+        obj2 = JSON.parse(jsonStr)
+        console.log(jsonStr)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
