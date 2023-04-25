@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="name" >
+        <input type="submit" value="ADD">
+        <ul id="todoList"></ul>
+    </form>
+    <ul>
+
+    </ul>
+    <script>
+        //submit할 때 비어있지 않게
+        const ready = document.querySelector("[type='text']")
+        const form = document.querySelector("form")
+        // console.log(ready)
+        
+        const todoList = document.querySelector('#todoList')
+        form.addEventListener('submit',function(e){
+            e.preventDefault()
+            if (ready.value.length === 0) {
+                // alert('메세지를 입력하세요.')
+            }
+            else{
+                const li = document.createElement('li')
+                li.innerText = ready.value
+                todoList.appendChild(li)
+            }
+            ready.value = ''
+        })
+        // post가 발생했을 때
+        // text의 내용으로 li 만들어서 리스트에 추가
+        // ul에 추가
+    </script>
+</body>
+</html>

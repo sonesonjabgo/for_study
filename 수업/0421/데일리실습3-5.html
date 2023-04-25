@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .done {
+            text-decoration: line-through;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <form action="" id="todoForm">
+        <input type="text" id="todoInput">
+        <input type="submit" value="ADD">
+    </form>
+    <ul id="todoList">
+
+    </ul>
+    <script>
+        const todoForm = document.querySelector("#todoForm")
+        const todoInput = document.querySelector("#todoInput")
+        const todoList = document.querySelector("#todoList")
+
+        // form 요소에 submit 이벤트가 발생하면 실행할 문장을 미리 등록
+        // form 요소에 이벤트리스너 추가 : 
+        // addEventListener() 메서드의 인자로, 이벤트 종류와 코드를 넣어주면 됩니다
+        todoForm.addEventListener('submit', function(event) {
+            // todoInput.value 가지고 와서 li 요소 만들고 todoList 자식으로 달아줄 것
+            const li = document.createElement("li")
+            li.innerText = todoInput.value
+            todoList.appendChild(li)
+            li.addEventListener('click', function(){
+                li.classList.toggle('done')
+            })
+
+
+
+            // list가 자꾸 날아가는게 새로고침이 돼서 !!
+            // submit 이벤트가 발생하면 요청을 만들어 내서 새로고침 하게 됨.
+            // 요청이 만들어지는걸 막으면 된다.
+            event.preventDefault()
+            todoInput.value = ''
+        })
+
+    </script>
+</body>
+</html>
