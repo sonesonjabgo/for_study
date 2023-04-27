@@ -37,7 +37,7 @@
 
   <hr>
   {% if request.user.is_authenticated %}
-    <form action="{% url 'articles:comments_create' article.pk %}" method="POST">
+    <form id="comment-form" data-article-pk="{{ article.pk }}">
       {% csrf_token %}
       {{ comment_form }}
       <input type="submit">
@@ -52,11 +52,27 @@
   <script>
     const form = document.querySelector('#comment-form')
     const input = document.querySelector('[name=content]')
+    const commentList = document.querySelector('#comment-list')
     const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value
-
+    
     form.addEventListener('submit', function (event) {
+      const commentUrl = `/articles/${event.target.dataset.articlePk}/comments/`
       event.preventDefault()
 	// 이곳에 코드를 작성하세요
+      const data = new FormData()
+      data.append('content', input.value)
+      axios({
+        method: "POST",
+        url: commentUrl,
+        headers: {'X-CSRFToken': csrftoken}, // axios의 post crft 토큰 처리는 이런식으로
+        data,
+      })
+      .then(function(response){
+        const li = document.createElement('li')
+        li.innerText = `${response.data.username} - ${response.data.content}` //views에서 context안에 username, content 보내야 함
+        commentList.appendChild(li)
+      })
+      input.value = ''
     })
 
   </script>
