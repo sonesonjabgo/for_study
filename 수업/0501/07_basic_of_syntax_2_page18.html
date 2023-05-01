@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .done {
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+  <!-- 3. v-for -->
+  <div id="app">
+    <!-- <h2>1. String</h2>
+    <div v-for="char in myStr">
+      {{ char }}
+    </div>
+    <div v-for="(char, index) in myStr" :key="index">
+      <p>{{ index }}번째 문자열 {{ char }}</p>
+    </div>
+
+    <div v-for="(char, index) in myStr" :key="index">
+      <p>{{ index }}번째 문자열 {{ char }}</p>
+    </div> -->
+
+    <h2>2. Array</h2>
+    <div v-for="(item, index) in myArr" :key="`ssafy-${index}`">
+      <p>{{ index }}번째 아이템 {{ item }}</p>
+    </div>
+
+    <div v-for="item in myArr2" :key="" >
+      <p :class="{done:item.completed}" @click="setDone(item)">{{ index }}번째 아이템</p>
+		  <p>{{ item.name }}</p>
+    </div>
+    <button @click="deleteDone">지워</button>
+    <!-- <h2>3. Object</h2>
+    <div v-for="value in myObj">
+      <p>{{ value }}</p>
+    </div>
+
+    <div v-for="(value, key) in myObj" :key="key">
+      <p>{{ key }} : {{ value }}</p>
+    </div> -->
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        // 1. String
+        myStr: 'Hello, World!',
+
+        // 2-1. Array
+        myArr: ['python', 'django', 'vue.js'],
+
+        // 2-2. Array with Object
+        myArr2: [
+          { id: 1, name: 'python', completed: false},
+          { id: 2, name: 'django', completed: true},
+          { id: 3, name: 'vue.js', completed: false},
+          { id: 4, name: 'vue1.js', completed: false},
+          { id: 5, name: 'vue2.js', completed: true},
+          { id: 6, name: 'vue3.js', completed: false},
+			  ],
+        
+        // 3. Object
+        // myObj: {
+        //   name: 'harry',
+        //   age: 27
+        // },
+      },
+      methods : {
+        deleteDone(){
+          this.myArr2 = this.myArr2.filter((el)=>{
+            return !el.completed
+          })
+        },
+        setDone(el){
+          el.completed = !el.completed
+        }
+      }
+
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div> {{ msg }}</div>
+        <button v-on:click="func1">눌러보쇼</button>
+        <p v-text="msg"></p>
+        <p v-html="msg"></p>
+        <p v-show="isActive">보이다가 안보이다가</p>
+    </div>  
+
+    <div id="app2">
+        <p id="name">name: {{ message }}</p>
+        <input type="text" v-model="message">
+    </div>
+
+    <div v-for="(word, index) in words" v-bind:key="word.id">
+        <p>{{ word.id }} : {{ word.value }}</p>
+    </div>
+ 
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                msg: '안녕하시오옹ㅇ',
+                isActive: false,
+                words: [
+                    {id:1, value:'apple'},
+                    {id:2, value:'banana'},
+                    {id:2, value:'car'},
+                ]
+            },
+            methods: {
+                func1: function(){
+                    this.isActive = !this.isActive // 원래 갖고 있던 값의 반대를 가지게 함
+                },
+                func2: function(){
+                    alert('alert222')
+                },
+            }
+        })
+
+        const app2 = new Vue({
+            el: '#app2',
+            data: {
+                message: '',
+            }
+        })
+    </script>
+</body>
+</html>
