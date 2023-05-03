@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="lunch">
+        <h1>점심메뉴</h1>
+        <button @click="pickmenu">Pick One</button>
+        <p>{{ pick }}</p>
+    </div>
+    <hr>
+    <div id="lotto">
+        <h1>로또</h1>
+        <button>Get Lucky Numbers</button>
+        <!-- <p>{{ number }}</p> -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <script>
+
+        const lunch = new Vue({
+            el : "#lunch",
+            data: {
+                menu : [
+                    '김밥', '국밥', '알밥'
+                ],
+                pick : ''
+            },
+            methods : {
+                pickmenu : function(){
+                    menulen = this.menu.length
+                    rannum = _.random(menulen-1)
+                    this.pick = this.menu[rannum]
+                    // return pick
+                }
+            }
+        })
+    </script>
+</body>
+</html>
