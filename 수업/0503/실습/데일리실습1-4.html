@@ -15,8 +15,8 @@
     <hr>
     <div id="lotto">
         <h1>로또</h1>
-        <button>Get Lucky Numbers</button>
-        <!-- <p>{{ number }}</p> -->
+        <button @click="getNum">Get Lucky Numbers</button>
+        <p>{{ number }}</p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -36,7 +36,18 @@
                     menulen = this.menu.length
                     rannum = _.random(menulen-1)
                     this.pick = this.menu[rannum]
-                    // return pick
+                }
+            }
+        })
+
+        const lotto = new Vue({
+            el : "#lotto",
+            data: {
+                number : ''
+            },
+            methods:{
+                getNum : function(){
+                    this.number =  _.sampleSize(_.range(1, 46), 6)
                 }
             }
         })
